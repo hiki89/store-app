@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Customers from './components/AppCustomers.vue';
 import Products from './components/AppProducts.vue';
+import AddCustomers from './components/AddCustomers.vue';
 
 Vue.use(Router);
 
@@ -12,6 +13,7 @@ export default new Router({
         {path: '/', redirect: 'customers'},
         {path: '/customers', component: Customers},
         {path: '/products', component: Products},
+        {path: '/add/customer', component: AddCustomers},
     ]
 })
 

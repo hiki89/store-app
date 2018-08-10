@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Customers</h1>
-    <table>
+    <table class="table table-striped table-dark">
       <thead>
         <th>First Name</th>
         <th>Last Name</th>
@@ -33,7 +33,6 @@ export default {
       }
   },
     methods: {
-
         deleteCustomer(customer){
             customerService.remove(customer);
         }
