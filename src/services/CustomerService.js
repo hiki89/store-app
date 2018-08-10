@@ -4,6 +4,8 @@ const customers = [
     {id: 3, firstName:"Filip", lastName:"Filipovic", email:"ff@gmail.com", products: []}
 ]
 
+let nextId = 4
+
 class CustomerService {
     
     list() {
@@ -16,7 +18,14 @@ class CustomerService {
     }
 
     add(newCustomer) {
+        newCustomer.id = nextId
         customers.push(newCustomer);
+        nextId++
+    }
+
+    oneC(id) {
+        console.log(typeof(id))
+        return customers.find(customer =>  customer.id == id)
     }
 }
 

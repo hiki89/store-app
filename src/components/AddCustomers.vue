@@ -24,13 +24,13 @@ export default {
           }
       }
   },
+  
     methods: {
         addCustomer() {
             customerService.add(this.newCustomer)
             this.newCustomer = {products: []}
             this.$router.push('/customers')
         }
-        
     }   
 }
 

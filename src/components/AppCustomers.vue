@@ -17,6 +17,9 @@
           <td>
             <button @click="deleteCustomer(customer)">Delete</button>
           </td>
+          <td>
+          <router-link to="/">Latest Purchases</router-link>
+          </td>
         </tr>
       </tbody>
     </table>
