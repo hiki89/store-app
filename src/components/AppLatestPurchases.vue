@@ -1,6 +1,15 @@
 <template>
   <div>
-    <h1 >{{ customer.firstName }}</h1>
+    <h1 >{{ customer.firstName }} {{ customer.lastName }}</h1>
+    <h3>Email: {{ customer.email}}</h3>
+    <h5>Latest purchases: </h5>
+    <ul class="list-group list-group-flush" v-for="product in customer.products" :key="product.id">
+      <li class="list-group-item">
+        {{ product }}
+      </li>
+    </ul><br>
+    <router-link class="btn btn-dark" to="/customers">Back to customers</router-link>
+
     
   </div>
 </template>
@@ -15,8 +24,7 @@ export default {
       }
   },
   created() {
-     this.customer = customerService.oneC(this.$route.params.id)
-     console.log(this.customer);
+     this.customer = customerService.singleCustomer(this.$route.params.id)
   } 
 }
 
