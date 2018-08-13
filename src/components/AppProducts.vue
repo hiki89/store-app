@@ -1,11 +1,13 @@
 <template>
   <div>
     <h1>Products</h1>
-    <input type="text" v-model='search' placeholder="Search product"><br><br>
+    <label><i><b>Search product</b></i></label>
+    <input type="text" class="form-control" v-model='search' placeholder="Search product"><br><br>
     <ul class="list-group list-group-flush" v-for='(product, index) in filteredProducts' :key='index'>
       <li class="list-group-item">{{ product.title }} - Quantity: {{ product.quantity }} 
         <button class="btn btn-dark" @click="changeProductQuantity(product, '-')">-</button>
         <button class="btn btn-secondary" @click="changeProductQuantity(product, '+')">+</button>
+        <router-link style="float:right" :to="{name: 'buy', params: {id: product.id}}" class="btn btn-success">Buy</router-link>
       </li>
     </ul>
   </div>
@@ -23,9 +25,9 @@ export default {
   },
 
   methods: {
-      changeProductQuantity(product, value) {
-        productService.changeProductsQuantity(product, value)
-      }
+    changeProductQuantity(product, value) {
+      productService.changeProductsQuantity(product, value)
+    }
   },
 
   computed: {
@@ -41,6 +43,8 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 button{
-  float: right
+  margin-left: 10px;
+  float: right;
 }
+
 </style>

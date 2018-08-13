@@ -3,9 +3,9 @@
     <h1 >{{ customer.firstName }} {{ customer.lastName }}</h1>
     <h3>Email: {{ customer.email}}</h3>
     <h5>Latest purchases: </h5>
-    <ul class="list-group list-group-flush" v-for="product in customer.products" :key="product.id">
+    <ul class="list-group list-group-flush" v-for="(product, index) in customer.products" :key="index">
       <li class="list-group-item">
-        {{ product }}
+        {{ product.title }}
       </li>
     </ul><br>
     <router-link class="btn btn-dark" to="/customers">Back to customers</router-link>

@@ -16,7 +16,7 @@
             <button @click="deleteCustomer(customer)">Delete</button>
           </td>
           <td>
-          <router-link :to="{name: 'latest-purchases', params: {id: customer.id}}">Latest Purchases</router-link>
+          <router-link class="badge badge-primary" :to="{name: 'latest-purchases', params: {id: customer.id}}">Latest Purchases</router-link>
           </td>
         </tr>
       </tbody>
@@ -29,15 +29,16 @@ import { customerService } from '../services/CustomerService';
 
 export default {
   data() {
-      return {
-          customers: customerService.list()
-      }
+    return {
+      customers: customerService.list()
+    }
   },
-    methods: {
-        deleteCustomer(customer){
-            customerService.remove(customer);
-        }
-    }   
+
+  methods: {
+    deleteCustomer(customer){
+      customerService.remove(customer);
+    }
+  }   
 }
 
 </script>

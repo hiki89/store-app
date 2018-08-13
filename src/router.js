@@ -5,6 +5,7 @@ import Customers from './components/AppCustomers.vue';
 import Products from './components/AppProducts.vue';
 import AddCustomers from './components/AddCustomers.vue';
 import AppLatestPurchases from './components/AppLatestPurchases.vue';
+import AppBuy from './components/AppBuy.vue';
 
 Vue.use(Router);
 
@@ -15,7 +16,8 @@ export default new Router({
         {path: '/customers', component: Customers},
         {path: '/products', component: Products},
         {path: '/add/customer', component: AddCustomers},
-        {path: '/customers/:id', component: AppLatestPurchases, name: 'latest-purchases'},
+        {path: '/customers/:id', component: AppLatestPurchases, name: 'latest-purchases', props: true},
+        {path: '/products/:id', component: AppBuy, name: 'buy', props: true}
     ]
 })
 

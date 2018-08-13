@@ -17,6 +17,10 @@ class ProductService {
             product.quantity--;
         }
     }
+
+    singleProduct(id) {
+        return products.find(product => product.id == id)    
+    }
     
 }
 
