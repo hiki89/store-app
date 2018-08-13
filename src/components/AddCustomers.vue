@@ -1,14 +1,14 @@
 <template>
   <div>
     <h1>Add Customer</h1>
-    <form @submit.prevent>
+    <form @submit.prevent class="form-group">
         <label>First Name</label>
-        <input v-model="newCustomer.firstName" type="text" placeholder="Name"> <br>
+        <input v-model="newCustomer.firstName" type="text" class="form-control" placeholder="Name"> <br>
         <label>Last Name</label>
-        <input v-model="newCustomer.lastName" type="text" placeholder="Last name"> <br>
+        <input v-model="newCustomer.lastName" type="text" class="form-control" placeholder="Last name"> <br>
         <label>Email</label>
-        <input v-model="newCustomer.email" type="text" placeholder="Email"> <br>
-        <button @click="addCustomer" type="submit">Add Customer</button>
+        <input v-model="newCustomer.email" type="text" class="form-control" placeholder="Email"> <br>
+        <button @click="addCustomer" type="submit" class="btn btn-primary">Add Customer</button>
     </form>
   </div>
 </template>
